@@ -4,7 +4,6 @@ import { ColorRing } from "react-loader-spinner";
 export default function Loader() {
   return (
     <div className={css.loaderContainer}>
-      {/* <p className={css.loaderText}>Please wait, loading images...</p> */}
       <ColorRing
         visible={true}
         height="80"

@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import { apiKey } from "./apiKey";
 import { fetchImages } from "./images-api";
-// import Modal from "react-modal";
 
 import SearchBar from "./components/SearchBar/SearchBar";
 import ImageGallery from "./components/ImageGallery/ImageGallery";
@@ -55,10 +54,6 @@ function App() {
     getArticles();
   }, [page, query]);
 
-  // const handleOpenModal = () => {
-  //   setModalIsOpen(true);
-  // };
-
   const handleClickOnImage = (imageData) => {
     setModalIsOpen(true);
     setChosenImageData(imageData);
@@ -68,10 +63,6 @@ function App() {
     setModalIsOpen(false);
     setChosenImageData([]);
   };
-
-  // console.log(chosenImageData);
-
-  // Modal.setAppElement(document.getElementById("gallery"));
 
   return (
     <>

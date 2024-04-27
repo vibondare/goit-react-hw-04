@@ -15,7 +15,6 @@ export default function ImageModal({ imageData, isOpen, onClose }) {
       overlayClassName={css.overlay}
     >
         <img src={imageData.urls.regular} alt={imageData.alt_description} className={css.image} />
-      {/* {imageData.length > 0 && <img src={imageData.urls.regular} alt={imageData.alt_description} />} */}
     </Modal>
   );
 }

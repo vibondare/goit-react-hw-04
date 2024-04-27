@@ -11,7 +11,6 @@ export default function SearchBar({ onSearch }) {
           const form = event.target;
           const searchQuery = form.elements.query.value;
           onSearch(searchQuery);
-          // form.reset();
         }}
       >
         <input
