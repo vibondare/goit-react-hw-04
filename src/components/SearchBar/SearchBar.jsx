@@ -3,7 +3,7 @@ import { useId } from "react";
 import css from "./SearchBar.module.css";
 import toast, { Toaster } from "react-hot-toast";
 
-export default function SearchBar({ onSearch }) {
+export default function SearchBar({ onSearch }) {  
   return (
     <header className={css.header}>
       <form
@@ -12,7 +12,7 @@ export default function SearchBar({ onSearch }) {
           const form = event.target;
           const searchQuery = form.elements.query.value;
           if (searchQuery.trim() === "") {
-            toast.error("To search for images, search field must to be filled in!");
+            toast.error("To search for images, search field must be filled in!");
             return;
           }
           onSearch(searchQuery);
