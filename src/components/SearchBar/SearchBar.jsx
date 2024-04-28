@@ -20,6 +20,7 @@ export default function SearchBar({ onSearch }) {
           placeholder="Search images and photos"
           name="query"
           className={css.searchBarInput}
+          required
         />
         <button type="submit" className={css.searchButton}>Search</button>
       </form>
