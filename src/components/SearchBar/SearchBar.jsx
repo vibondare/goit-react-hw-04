@@ -1,6 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useId } from "react";
 import css from "./SearchBar.module.css";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function SearchBar({ onSearch }) {
   return (
@@ -10,6 +11,10 @@ export default function SearchBar({ onSearch }) {
           event.preventDefault();
           const form = event.target;
           const searchQuery = form.elements.query.value;
+          if (searchQuery.trim() === "") {
+            toast.error("To search for images, search field must to be filled in!");
+            return;
+          }
           onSearch(searchQuery);
         }}
       >
@@ -20,9 +25,11 @@ export default function SearchBar({ onSearch }) {
           placeholder="Search images and photos"
           name="query"
           className={css.searchBarInput}
-          required
         />
-        <button type="submit" className={css.searchButton}>Search</button>
+        <Toaster position="top-right" />
+        <button type="submit" className={css.searchButton}>
+          Search
+        </button>
       </form>
     </header>
   );
